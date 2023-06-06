@@ -59,13 +59,13 @@ class CoinDetail {
     if (json['tags'] != null) {
       tags = <Tags>[];
       json['tags'].forEach((v) {
-        tags!.add( Tags.fromJson(v));
+        tags!.add(Tags.fromJson(v));
       });
     }
     if (json['team'] != null) {
       team = <Team>[];
       json['team'].forEach((v) {
-        team!.add( Team.fromJson(v));
+        team!.add(Team.fromJson(v));
       });
     }
     description = json['description'];
@@ -86,36 +86,36 @@ class CoinDetail {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['symbol'] = this.symbol;
-    data['rank'] = this.rank;
-    data['is_new'] = this.isNew;
-    data['is_active'] = this.isActive;
-    data['type'] = this.type;
-    data['logo'] = this.logo;
-    if (this.tags != null) {
-      data['tags'] = this.tags!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['symbol'] = symbol;
+    data['rank'] = rank;
+    data['is_new'] = isNew;
+    data['is_active'] = isActive;
+    data['type'] = type;
+    data['logo'] = logo;
+    if (tags != null) {
+      data['tags'] = tags!.map((v) => v.toJson()).toList();
     }
-    if (this.team != null) {
-      data['team'] = this.team!.map((v) => v.toJson()).toList();
+    if (team != null) {
+      data['team'] = team!.map((v) => v.toJson()).toList();
     }
-    data['description'] = this.description;
-    data['message'] = this.message;
-    data['open_source'] = this.openSource;
-    data['started_at'] = this.startedAt;
-    data['development_status'] = this.developmentStatus;
-    data['hardware_wallet'] = this.hardwareWallet;
-    data['proof_type'] = this.proofType;
-    data['org_structure'] = this.orgStructure;
-    data['hash_algorithm'] = this.hashAlgorithm;
+    data['description'] = description;
+    data['message'] = message;
+    data['open_source'] = openSource;
+    data['started_at'] = startedAt;
+    data['development_status'] = developmentStatus;
+    data['hardware_wallet'] = hardwareWallet;
+    data['proof_type'] = proofType;
+    data['org_structure'] = orgStructure;
+    data['hash_algorithm'] = hashAlgorithm;
 
-    if (this.whitepaper != null) {
-      data['whitepaper'] = this.whitepaper!.toJson();
+    if (whitepaper != null) {
+      data['whitepaper'] = whitepaper!.toJson();
     }
-    data['first_data_at'] = this.firstDataAt;
-    data['last_data_at'] = this.lastDataAt;
+    data['first_data_at'] = firstDataAt;
+    data['last_data_at'] = lastDataAt;
     return data;
   }
 }
@@ -136,11 +136,11 @@ class Tags {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['coin_counter'] = this.coinCounter;
-    data['ico_counter'] = this.icoCounter;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['coin_counter'] = coinCounter;
+    data['ico_counter'] = icoCounter;
     return data;
   }
 }
@@ -159,10 +159,10 @@ class Team {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['position'] = this.position;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['position'] = position;
     return data;
   }
 }
@@ -183,11 +183,11 @@ class Stats {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['subscribers'] = this.subscribers;
-    data['contributors'] = this.contributors;
-    data['stars'] = this.stars;
-    data['followers'] = this.followers;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['subscribers'] = subscribers;
+    data['contributors'] = contributors;
+    data['stars'] = stars;
+    data['followers'] = followers;
     return data;
   }
 }
@@ -204,9 +204,9 @@ class Whitepaper {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['link'] = this.link;
-    data['thumbnail'] = this.thumbnail;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['link'] = link;
+    data['thumbnail'] = thumbnail;
     return data;
   }
 }

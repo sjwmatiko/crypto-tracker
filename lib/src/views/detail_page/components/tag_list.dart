@@ -14,12 +14,21 @@ class TagList extends StatelessWidget {
       direction: Axis.horizontal,
       children: coin!.tags!.map((tag) {
         return Chip(
-          label: Text(tag.name!, style: const TextStyle(color: Colors.green)),
+          label: Text(
+            tag.name!,
+            style: const TextStyle(
+              color: Colors.green,
+              fontSize: 13,
+            ),
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
-            side: const BorderSide(color: Colors.green, width: 10.0),
+            side: const BorderSide(
+              color: Colors.green,
+              width: 10.0,
+            ),
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: const Color.fromARGB(255, 22, 22, 22),
         );
       }).toList(),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cryptocurrency_app/src/di.dart';
+import 'package:maicrypto/src/di.dart';
 import 'package:provider/provider.dart';
 import 'src/views/home_page/home_page.dart';
 
@@ -14,11 +14,13 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: DI.instance.getProviders(),
       child: MaterialApp(
-        title: 'Flutter Cryptocurrency App',
+        title: 'Maicrypto',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
           primarySwatch: Colors.blue,
+          fontFamily: 'Roboto',
+          focusColor: const Color.fromARGB(255, 19, 18, 18),
         ),
         home: const HomePage(),
       ),

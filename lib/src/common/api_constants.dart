@@ -1,8 +1,8 @@
-const BASE_URL = "https://api.coinpaprika.com/v1";
+const baseUrl = "https://api.coinpaprika.com/v1";
 
-const COINS = "$BASE_URL/coins";
+const mycoins = "$baseUrl/coins";
 
-const COIN = "$BASE_URL/coins";
+const mycoin = "$baseUrl/coins";
 
 //* https://api.coinpaprika.com/v1/coins
 //* https://api.coinpaprika.com/v1/coins/btc-bitcoin

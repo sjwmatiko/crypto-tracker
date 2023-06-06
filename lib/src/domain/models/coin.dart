@@ -1,6 +1,7 @@
 class Coin {
   String? id;
   String? name;
+  double? price;
   String? symbol;
   int? rank;
   bool? isNew;
@@ -10,6 +11,7 @@ class Coin {
   Coin(
       {this.id,
       this.name,
+      this.price,
       this.symbol,
       this.rank,
       this.isNew,
@@ -19,6 +21,7 @@ class Coin {
   Coin.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
+    price = json['price'];
     symbol = json['symbol'];
     rank = json['rank'];
     isNew = json['is_new'];
@@ -27,14 +30,15 @@ class Coin {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['symbol'] = this.symbol;
-    data['rank'] = this.rank;
-    data['is_new'] = this.isNew;
-    data['is_active'] = this.isActive;
-    data['type'] = this.type;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['price'] = price;
+    data['symbol'] = symbol;
+    data['rank'] = rank;
+    data['is_new'] = isNew;
+    data['is_active'] = isActive;
+    data['type'] = type;
     return data;
   }
 }

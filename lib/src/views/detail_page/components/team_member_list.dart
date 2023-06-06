@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../domain/models/coin_detail.dart';
 
-
 class TeamMemberList extends StatelessWidget {
   const TeamMemberList({
     super.key,

@@ -1,22 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cryptocurrency_app/src/controllers/coin_controller.dart';
-import 'package:flutter_cryptocurrency_app/src/views/home_page/components/coin_list.dart';
+import 'package:maicrypto/src/controllers/coin_controller.dart';
+import 'package:maicrypto/src/views/home_page/components/coin_list.dart';
 import '../detail_page/detail_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final CoinController _coinController = CoinController();
+    final CoinController coinController = CoinController();
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 22, 22, 22),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 19, 18, 18),
+        elevation: 0, // Remove the shadow below the app bar
+        title: Text(
+          'Cryptocurrencies'.toUpperCase(),
+          style: const TextStyle(
+            color: Color.fromARGB(255, 252, 252, 252),
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.5, // Add some letter spacing for a stylish look
+          ),
+        ),
+        centerTitle: true, // Center the title within the app bar
+        actions: [
+          IconButton(
+            onPressed: () {
+              // Add action functionality here
+            },
+            icon: const Icon(
+              FontAwesomeIcons.bitcoin,
+              size: 28,
+              color: Colors.orange,
+            ),
+          ),
+        ],
+        actionsIconTheme: const IconThemeData(
+          color: Color.fromARGB(255, 252, 252, 252),
+        ),
+      ),
       body: Column(
         children: [
           const SizedBox(height: 20),
           Expanded(
             child: FutureBuilder(
-              future: _coinController.getCoins(),
+              future: coinController.getCoins(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return ListView.builder(

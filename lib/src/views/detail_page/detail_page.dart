@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../../controllers/coin_controller.dart';
 import 'components/tag_list.dart';
 import 'components/team_member_list.dart';
@@ -10,19 +9,20 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CoinController _coinController = CoinController();
+    final CoinController coinController = CoinController();
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 22, 22, 22),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 22, 22, 22),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () => Navigator.pop(context),
+          iconSize: 16,
         ),
       ),
       body: SingleChildScrollView(
         child: FutureBuilder(
-          future: _coinController.getCoinById(id),
+          future: coinController.getCoinById(id),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               final coin = snapshot.data;
@@ -55,8 +55,9 @@ class DetailPage extends StatelessWidget {
                     child: Text(
                       coin.description!,
                       style: const TextStyle(
-                        color: Colors.white54,
-                        fontSize: 14,
+                        color: Color.fromARGB(255, 243, 243, 240),
+                        fontFamily: 'Lato',
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -76,7 +77,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   TagList(coin: coin),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 30),
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(

@@ -13,7 +13,7 @@ class CoinController extends ChangeNotifier {
 
   Future<List<Coin>> getCoins() async {
     try {
-      final response = await _networkService.get(COINS);
+      final response = await _networkService.get(mycoins);
       final List<dynamic> data = response.data;
       final coins = data.map((e) => Coin.fromJson(e)).toList();
       notifyListeners();
@@ -25,7 +25,7 @@ class CoinController extends ChangeNotifier {
 
   Future<CoinDetail> getCoinById(String id) async {
     try {
-      final response = await _networkService.getCoinById('$COIN/$id');
+      final response = await _networkService.getCoinById('$mycoin/$id');
       final Map<String, dynamic> data = response.data;
       final CoinDetail coin = CoinDetail.fromJson(data);
       notifyListeners();
